@@ -1,0 +1,20 @@
+.card-primary {
+    width: 100%;
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.144);
+    border-radius: 7px;
+  }
+  
+  .card-secondary {
+    width: 100px;
+    flex: 0 0 auto;
+    background-color: var(--white);
+    color: var(--primary);
+    padding: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.144);
+    border-radius: 7px;
+    margin-right: 15px;
+  }
+  
