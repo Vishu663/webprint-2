@@ -37,12 +37,21 @@
   font-family: "Manrope", sans-serif;
 }
 
+.field {
+  display: flex;
+  align-items: center;
+}
+
 .input-icons {
   position: relative;
   top: 2px;
   padding-left: 4px;
 }
 
+.input-icon {
+  height: 20px;
+  width: 20px;
+}
 .login-fields label {
   padding-left: 5px;
   font-family: "Manrope", sans-serif;

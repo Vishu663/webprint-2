@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("./models/User.js");
+const User = require("./models/User.cjs");
 const cookieParser = require("cookie-parser");
 
 const path = require("path");

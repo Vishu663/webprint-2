@@ -1,0 +1,117 @@
+.forgetpsw-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.forgetpsw-content {
+    background-color: #f0ebff;
+    width: 345px;
+    height: 500px;
+    color: #36179a;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.forgetpsw-head h1 {
+    text-align: center;
+    margin: 0 0 30px;
+    font-family: "Manrope", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.forgetpsw-head h4 {
+    text-align: center;
+    margin: 30px 0 50px 0;
+    font-family: "Manrope", sans-serif;
+}
+
+/* FIELDS  */
+.forgetpsw-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Manrope", sans-serif;
+}
+
+/* INPUT  */
+.forgetpsw-fields input {
+    margin-top: 5px;
+    padding-left: 10px;
+    font-family: "Manrope", sans-serif;
+}
+
+.input-icons {
+    position: relative;
+    top: 2px;
+    padding-left: 4px;
+}
+
+.forgetpsw-fields label {
+    padding-left: 5px;
+    font-family: "Manrope", sans-serif;
+}
+
+.forgetpsw-fields .bottom-label {
+    float: right;
+    margin: 5px 0 0;
+    font-size: 12px;
+    font-family: "Manrope", sans-serif;
+}
+
+.forgetpsw-fields .bottom-label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* seprator */
+.seprator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.seprator p {
+    margin: 0;
+    padding-bottom: 5px;
+    font-family: "Manrope", sans-serif;
+}
+
+.seprator>div {
+    border-radius: 15px;
+    width: 100%;
+    background-color: #36179a;
+    height: 2px;
+}
+
+/* footer  */
+
+.forgetpsw-footer>div:nth-child(2) {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Manrope", sans-serif;
+}
+
+.forgetpsw-footer>div:nth-child(2) p {
+    font-size: 10px;
+    text-align: justify;
+    margin-top: 2px 0;
+    width: 268px;
+    font-family: "Manrope", sans-serif;
+}
+
+.enter-icon {
+    position: absolute;
+    padding-left: 42px;
+}
+
+.forgetpsw-fields a {
+    text-decoration: none;
+}

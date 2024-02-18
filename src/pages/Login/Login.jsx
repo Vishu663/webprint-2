@@ -4,7 +4,9 @@ import TextBox from "../../components/TextField/TextField";
 import Button from "../../components/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import google from "../../assets/google.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -14,7 +16,7 @@ export default function Login() {
   async function loginUser(ev) {
     ev.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5173/login", {
+      const response = await axios.post("http://localhost:3000/login", {
         email,
         password,
       });
@@ -42,30 +44,33 @@ export default function Login() {
 
         <form className="login-fields" onSubmit={loginUser}>
           <div>
-            <label>
-              Email ID
-              <TextBox
-                type={"email"}
-                placeholder="Enter your Email ID here"
-                value={email}
-                handleChange={(value) => setEmail(value)}
-              />
-              <Link to={"/signup"}>
-                <p className="bottom-label">Don't have account register now?</p>
-              </Link>
-            </label>
+            <div className="field">
+              <MdEmail className="input-icon" />
+              <label>Email </label>
+            </div>
+
+            <TextBox
+              type={"email"}
+              placeholder="Enter your Email ID here"
+              value={email}
+              handleChange={(value) => setEmail(value)}
+            />
+            <Link to={"/signup"}>
+              <p className="bottom-label">Don't have account register now?</p>
+            </Link>
           </div>
           <div>
-            <label>
-              Password
-              <TextBox
-                type={"password"}
-                handleChange={(value) => setPassword(value)}
-                placeholder="Enter your password here"
-                value={password}
-              />
-              <p className="bottom-label">Forget Password?</p>
-            </label>
+            <div className="field">
+              <RiLockPasswordFill className="input-icon" />
+              <label>Password</label>
+            </div>
+            <TextBox
+              type={"password"}
+              handleChange={(value) => setPassword(value)}
+              placeholder="Enter your password here"
+              value={password}
+            />
+            <a href="/forgetpsw"><p className="bottom-label">Forget Password?</p></a>
           </div>
 
           <Button
@@ -87,6 +92,7 @@ export default function Login() {
               btype="secondary"
               bTitle="Login with Google"
               btnImgSize={"20px"}
+              btnImg={google}
             />
             <div>
               <p>
