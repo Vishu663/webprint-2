@@ -7,6 +7,7 @@ import { IoLogOut } from "react-icons/io5";
 import { BsBriefcaseFill } from "react-icons/bs";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Modal from "../../components/Modal/Modal";
 
 export default function PrinterList() {
   const navigate = useNavigate();
@@ -48,6 +49,17 @@ export default function PrinterList() {
     localStorage.removeItem("token");
     navigate("/login");
   };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
 
   return (
     <>
@@ -181,9 +193,21 @@ export default function PrinterList() {
                 </table>
               </div>
             </div>
-            <div className="pr-section-2">
+            <div className="pr-section-2" onClick={openModal}>
               <BsFillPrinterFill className="printer-icon" />
               <h3>Add Printer</h3>
+              {isModalOpen && (
+        <Modal
+          onClose={closeModal}
+          title="Create Job"
+          label1={"Printer Name"}
+          label2={"Printer Type"}
+          pholder1={"Mention the printer name here"}
+          pholder2={"Select the type of printer"}
+          pholder3={"Select the printers for the job"}
+          modalPlaceholder="Enter your text here" // Placeholder prop for input field in Modal
+        />
+      )}
             </div>
           </div>
           <div className="db-right">
