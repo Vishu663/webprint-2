@@ -12,8 +12,10 @@ import { VscTriangleLeft } from "react-icons/vsc";
 import { VscTriangleRight } from "react-icons/vsc";
 import moment from "moment";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
   const [iconStates, setIconStates] = useState({
     dashboard: true,
     briefcase: false,
@@ -72,6 +74,20 @@ export default function Home() {
       }
     }, speed);
   };
+
+  const handleJob = () => {
+    navigate("/joblist");
+  };
+
+  const handlePrint = () => {
+    navigate("/printerlist");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="home-main">
@@ -84,14 +100,14 @@ export default function Home() {
               />
               <p>Dashboard</p>
             </div>
-            <div>
+            <div onClick={handleJob}>
               <BsBriefcaseFill
                 className={`side-icon ${iconStates.briefcase ? "active" : ""}`}
                 onClick={() => handleIconClick("briefcase")}
               />
               <p>Job List</p>
             </div>
-            <div>
+            <div onClick={handlePrint}>
               <BsFillPrinterFill
                 className={`side-icon ${iconStates.printer ? "active" : ""}`}
                 onClick={() => handleIconClick("printer")}
@@ -116,7 +132,7 @@ export default function Home() {
               />
               <p>Settings</p>
             </div>
-            <div>
+            <div onClick={handleLogout}>
               <IoLogOut
                 className={`side-icon ${iconStates.logout ? "active" : ""}`}
                 onClick={() => handleIconClick("logout")}

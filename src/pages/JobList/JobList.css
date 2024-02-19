@@ -1,0 +1,167 @@
+.job-main {
+    width: 100%;
+    height: 100dvh;
+    box-sizing: border-box;
+    display: flex;
+    background-color: #4425a7;
+}
+
+.sidebar {
+    width: 10%;
+    height: 100%;
+    background-color: #4425a7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0 25px 0;
+}
+
+.top-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-icons div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-icons p {
+    color: white;
+}
+
+.bottom-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-icons div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-icons p {
+    color: white;
+}
+
+.side-icon {
+    height: 40px;
+    width: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    padding: 4px;
+}
+
+.side-icon.active {
+    color: #20b4dc;
+    background-color: #36179b;
+    border-radius: 6px;
+}
+
+.jb-dashboard {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px 0 0 30px;
+    padding: 16px;
+    gap: 10px;
+}
+
+.db-left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 900px;
+    gap: 10px;
+}
+
+.jb-section-1 {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    background-color: #f0ebff;
+    border-radius: 12px;
+    gap: 10px;
+    overflow-y: auto;
+    color: #37169a;
+}
+
+.headline {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 0 10px;
+}
+
+.table-container {
+    flex-grow: 1;
+    /* Allow the table container to grow and occupy the available space */
+    overflow-y: auto;
+    /* Add this property for vertical scrolling */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table tbody {
+    width: 100%;
+}
+
+.table td {
+    padding: 15px 19px;
+}
+
+.table tr:hover {
+    width: 100%;
+    background-color: #e0d5ff;
+    color: #37169a;
+    border-radius: 50px;
+}
+
+.db-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 289px;
+    gap: 8px;
+}
+
+.box {
+    flex-grow: 1;
+    /* Allow boxes to take up remaining space */
+    background-color: #f0ebff;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.jb-section-2 {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: #f0ebff;
+    border-radius: 12px;
+    color: #37169a;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.job-icon {
+    height: 20px;
+    width: 20px;
+}

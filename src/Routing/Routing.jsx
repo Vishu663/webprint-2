@@ -4,6 +4,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import ForgetPsw from "../pages/ForgetPsw/ForgetPsw";
 import ResetPsw from "../pages/ResetPsw/ResetPsw";
 import Home from "../pages/Home/Home";
+import JobList from "../pages/JobList/JobList";
+import PrinterList from "../pages/PrinterList/PrinterList";
 
 export default function Routing() {
     return (
@@ -15,6 +17,8 @@ export default function Routing() {
                 <Route path="/forgetpsw" element={<ForgetPsw />} />
                 <Route path="/resetpsw" element={<ResetPsw />} />
                 <Route path="/home" element={<Home />} />
+                <Route path="/joblist" element={<JobList />} />
+                <Route path="/printerlist" element={<PrinterList />} />
             </Routes>
         </Router>
     );
