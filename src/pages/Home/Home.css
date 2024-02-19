@@ -3,13 +3,13 @@
     height: 100dvh;
     box-sizing: border-box;
     display: flex;
-    background-color: #36179a;
+    background-color: #4425a7;
 }
 
 .sidebar {
     width: 10%;
     height: 100%;
-    background-color: #36179a;
+    background-color: #4425a7;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -55,17 +55,18 @@
 }
 
 .side-icon {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
-
+    padding: 4px;
 }
 
 .side-icon.active {
-    color: #ff5733;
-    /* Change this to the desired active color */
+    color: #20b4dc;
+    background-color: #36179b;
+    border-radius: 6px;
 }
 
 .dashboard {
@@ -100,6 +101,8 @@
     display: flex;
     height: 95%;
     width: 100%;
+    padding-top: 8px;
+    gap: 10px;
 }
 
 .db-bottom-left {
@@ -135,6 +138,7 @@
     justify-content: space-between;
     padding: 10px;
     border-radius: 12px;
+    color: #37169a;
 }
 
 .date {
@@ -161,6 +165,7 @@
 
 .button-container button {
     border: none;
+    color: #37169a;
 }
 
 .arrow-icon {
@@ -171,10 +176,48 @@
 
 .section-3 {
     display: flex;
-    height: 280px;
+    flex-direction: column;
+    height: 288px;
     width: 100%;
     background-color: #f0ebff;
     border-radius: 12px;
+    gap: 10px;
+    overflow-y: auto;
+    color: #37169a;
+}
+
+.headline {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 0 10px;
+}
+
+.table-container {
+    flex-grow: 1;
+    /* Allow the table container to grow and occupy the available space */
+    overflow-y: auto;
+    /* Add this property for vertical scrolling */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table tbody {
+    width: 100%;
+}
+
+.table td {
+    padding: 15px 19px;
+}
+
+.table tr:hover {
+    width: 100%;
+    background-color: #e0d5ff;
+    color: #37169a;
+    border-radius: 50px;
 }
 
 .db-bottom-right {
@@ -182,4 +225,13 @@
     flex-direction: column;
     height: 100%;
     width: 289px;
+    gap: 8px;
+}
+
+.box {
+    flex-grow: 1;
+    /* Allow boxes to take up remaining space */
+    background-color: #f0ebff;
+    border-radius: 12px;
+    padding: 8px;
 }

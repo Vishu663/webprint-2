@@ -13,7 +13,6 @@ import { VscTriangleRight } from "react-icons/vsc";
 import moment from "moment";
 import axios from "axios";
 
-
 export default function Home() {
   const [iconStates, setIconStates] = useState({
     dashboard: true,
@@ -40,7 +39,6 @@ export default function Home() {
       return newIconStates;
     });
   };
-
 
   const [username, setUsername] = useState("");
   useEffect(() => {
@@ -80,35 +78,49 @@ export default function Home() {
         <div className="sidebar">
           <div className="top-icons">
             <div>
-              <MdSpaceDashboard className={`side-icon ${iconStates.dashboard ? "active" : ""}`}
-              onClick={() => handleIconClick("dashboard")}/>
+              <MdSpaceDashboard
+                className={`side-icon ${iconStates.dashboard ? "active" : ""}`}
+                onClick={() => handleIconClick("dashboard")}
+              />
               <p>Dashboard</p>
             </div>
             <div>
-              <BsBriefcaseFill className={`side-icon ${iconStates.briefcase ? "active" : ""}`}
-              onClick={() => handleIconClick("briefcase")} />
+              <BsBriefcaseFill
+                className={`side-icon ${iconStates.briefcase ? "active" : ""}`}
+                onClick={() => handleIconClick("briefcase")}
+              />
               <p>Job List</p>
             </div>
             <div>
-              <BsFillPrinterFill className={`side-icon ${iconStates.printer ? "active" : ""}`}
-              onClick={() => handleIconClick("printer")}/>
+              <BsFillPrinterFill
+                className={`side-icon ${iconStates.printer ? "active" : ""}`}
+                onClick={() => handleIconClick("printer")}
+              />
               <p>Printer List</p>
             </div>
             <div>
-              <MdOutlineLocalGroceryStore className={`side-icon ${iconStates.groceryStore ? "active" : ""}`}
-              onClick={() => handleIconClick("groceryStore")} />
+              <MdOutlineLocalGroceryStore
+                className={`side-icon ${
+                  iconStates.groceryStore ? "active" : ""
+                }`}
+                onClick={() => handleIconClick("groceryStore")}
+              />
               <p>Store</p>
             </div>
           </div>
           <div className="bottom-icons">
             <div>
-              <IoIosSettings className={`side-icon ${iconStates.settings ? "active" : ""}`}
-              onClick={() => handleIconClick("settings")} />
+              <IoIosSettings
+                className={`side-icon ${iconStates.settings ? "active" : ""}`}
+                onClick={() => handleIconClick("settings")}
+              />
               <p>Settings</p>
             </div>
             <div>
-              <IoLogOut className={`side-icon ${iconStates.logout ? "active" : ""}`}
-              onClick={() => handleIconClick("logout")} />
+              <IoLogOut
+                className={`side-icon ${iconStates.logout ? "active" : ""}`}
+                onClick={() => handleIconClick("logout")}
+              />
               <p>Logout</p>
             </div>
           </div>
@@ -152,23 +164,160 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="date-boxes" ref={elementRef}>
-                  <Card ctype="card-third"><div className="inside-box">{moment().format("ddd")}</div>{moment().format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(1, "days").format("ddd")}</div>{moment().add(1, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(2, "days").format("ddd")}</div>{moment().add(2, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(3, "days").format("ddd")}</div>{moment().add(3, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(4, "days").format("ddd")}</div>{moment().add(4, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(5, "days").format("ddd")}</div>{moment().add(5, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(6, "days").format("ddd")}</div>{moment().add(6, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(7, "days").format("ddd")}</div>{moment().add(7, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(8, "days").format("ddd")}</div>{moment().add(8, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(9, "days").format("ddd")}</div>{moment().add(9, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(10, "days").format("ddd")}</div>{moment().add(10, "days").format("D")}</Card>
-                  <Card ctype="card-third"><div className="inside-box">{moment().add(11, "days").format("ddd")}</div>{moment().add(11, "days").format("D")}</Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">{moment().format("ddd")}</div>
+                    {moment().format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(1, "days").format("ddd")}
+                    </div>
+                    {moment().add(1, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(2, "days").format("ddd")}
+                    </div>
+                    {moment().add(2, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(3, "days").format("ddd")}
+                    </div>
+                    {moment().add(3, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(4, "days").format("ddd")}
+                    </div>
+                    {moment().add(4, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(5, "days").format("ddd")}
+                    </div>
+                    {moment().add(5, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(6, "days").format("ddd")}
+                    </div>
+                    {moment().add(6, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(7, "days").format("ddd")}
+                    </div>
+                    {moment().add(7, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(8, "days").format("ddd")}
+                    </div>
+                    {moment().add(8, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(9, "days").format("ddd")}
+                    </div>
+                    {moment().add(9, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(10, "days").format("ddd")}
+                    </div>
+                    {moment().add(10, "days").format("D")}
+                  </Card>
+                  <Card ctype="card-third">
+                    <div className="inside-box">
+                      {moment().add(11, "days").format("ddd")}
+                    </div>
+                    {moment().add(11, "days").format("D")}
+                  </Card>
                 </div>
               </div>
-              <div className="section-3"></div>
+              <div className="section-3">
+                <div className="headline">
+                  <h4>Recent Jobs</h4>
+                  <h4>View All</h4>
+                </div>
+                <div className="table-container">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>Job Name</th>
+                        <th>Job ID</th>
+                        <th>File Name</th>
+                        <th>Filament used</th>
+                        <th>Time required</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Job</td>
+                        <td>Filename</td>
+                        <td>ID</td>
+                        <td>10gm</td>
+                        <td>2hrs</td>
+                      </tr>
+                      <tr>
+                        <td>Job</td>
+                        <td>Filename</td>
+                        <td>ID</td>
+                        <td>10gm</td>
+                        <td>2hrs</td>
+                      </tr>
+                      <tr>
+                        <td>Job</td>
+                        <td>Filename</td>
+                        <td>ID</td>
+                        <td>10gm</td>
+                        <td>2hrs</td>
+                      </tr>
+                      <tr>
+                        <td>Job</td>
+                        <td>Filename</td>
+                        <td>ID</td>
+                        <td>10gm</td>
+                        <td>2hrs</td>
+                      </tr>
+                      <tr>
+                        <td>Job</td>
+                        <td>Filename</td>
+                        <td>ID</td>
+                        <td>10gm</td>
+                        <td>2hrs</td>
+                      </tr>
+                      <tr>
+                        <td>Job</td>
+                        <td>Filename</td>
+                        <td>ID</td>
+                        <td>10gm</td>
+                        <td>2hrs</td>
+                      </tr>
+                      <tr>
+                        <td>Job</td>
+                        <td>Filename</td>
+                        <td>ID</td>
+                        <td>10gm</td>
+                        <td>2hrs</td>
+                      </tr>
+                      <tr>
+                        <td>Job</td>
+                        <td>Filename</td>
+                        <td>ID</td>
+                        <td>10gm</td>
+                        <td>2hrs</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-            <div className="db-bottom-right"></div>
+            <div className="db-bottom-right">
+              <div className="box"></div>
+              <div className="box"></div>
+            </div>
           </div>
         </div>
       </div>

@@ -37,12 +37,20 @@ app.post("/signup", async (req, res) => {
 
 function getUserDataFromReq(req) {
   return new Promise((resolve, reject) => {
-    jwt.verify(req.cookies.token, jwtSecret, {}, async (err, userData) => {
-      if (err) throw err;
-      resolve(userData);
-    });
+    if (!req.cookies.token) {
+      reject("Token not found in cookies");
+    } else {
+      jwt.verify(req.cookies.token, jwtSecret, {}, (err, userData) => {
+        if (err) {
+          reject(err); // Forward the error to the caller
+        } else {
+          resolve(userData); // Resolve with the decoded user data
+        }
+      });
+    }
   });
 }
+
 
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
