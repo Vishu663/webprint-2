@@ -1,5 +1,10 @@
 import Routing from "./Routing/Routing";
+import { UserProvider } from "./Context/UserProvider";
 
 export default function App() {
-  return <><div><Routing /></div></>
+  return <>
+  <UserProvider>
+    <div><Routing /></div>
+  </UserProvider>
+  </>
 }

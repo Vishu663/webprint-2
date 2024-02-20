@@ -70,6 +70,7 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const userDoc = await User.findOne({ email });
   if (userDoc) {
+    // res.status(200).send({ status:200, message: `User ${userDoc.name} logged in!`, data:userDoc.name });
     const passOk = bcrypt.compareSync(password, userDoc.password);
     if (passOk) {
       jwt.sign(
@@ -81,7 +82,7 @@ app.post("/login", async (req, res) => {
         {},
         (err, token) => {
           if (err) throw err;
-          res.cookie("token", token).json({ token }); // Send the token in the response
+          res.cookie("token", token).json({ token, name: userDoc.name }); // Send the token in the response
         }
       );
     } else {
@@ -89,21 +90,6 @@ app.post("/login", async (req, res) => {
     }
   } else {
     res.status(404).json("User not found");
-  }
-});
-
-app.get("/profile", async (req, res) => {
-  try {
-    const userData = await getUserDataFromReq(req);
-    if (userData) {
-      const { name } = await User.findById(userData.id);
-      res.json({ name });
-    } else {
-      res.json(null);
-    }
-  } catch (error) {
-    console.error("Error fetching user profile:", error);
-    res.status(500).json("Internal Server Error");
   }
 });
 

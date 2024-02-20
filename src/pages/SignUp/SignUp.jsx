@@ -26,7 +26,7 @@ export default function SignUp() {
       alert("Registration Successful. Now you can log in.");
       if (response.data) {
         console.log(response.data);
-        navigate("/home");
+        navigate("/login");
       }
     } catch (error) {
       alert(
@@ -59,7 +59,7 @@ export default function SignUp() {
           <div>
           <div className="field">
               <FaUser className="input-icon" />
-              <label>Password</label>
+              <label>UserName</label>
             </div>
               <TextBox
                 inputName="name"

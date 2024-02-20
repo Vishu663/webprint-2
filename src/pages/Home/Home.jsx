@@ -6,15 +6,17 @@ import { IoIosSettings } from "react-icons/io";
 import { IoLogOut } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { BsBriefcaseFill } from "react-icons/bs";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Card from "../../components/Card/Card";
 import { VscTriangleLeft } from "react-icons/vsc";
 import { VscTriangleRight } from "react-icons/vsc";
 import moment from "moment";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../Context/UserProvider";
 
 export default function Home() {
+  const {user} = useContext(UserContext);
   const navigate = useNavigate();
   const [iconStates, setIconStates] = useState({
     dashboard: true,
@@ -42,21 +44,6 @@ export default function Home() {
     });
   };
 
-  const [username, setUsername] = useState("");
-  useEffect(() => {
-    async function fetchUserData() {
-      try {
-        const response = await axios.get("http://localhost:3000/profile");
-        if (response.data) {
-          setUsername(response.data.name);
-        }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    }
-
-    fetchUserData();
-  }, []);
   const elementRef = useRef(null);
   const [arrowDisable, setArrowDisable] = useState(true);
   const handleHorizantalScroll = (element, speed, distance, step) => {
@@ -143,7 +130,7 @@ export default function Home() {
         </div>
         <div className="dashboard">
           <div className="db-top">
-            <h3>Hey {username}, Welcome to Webprint</h3>
+            <h3>Hey {user}, Welcome to Webprint</h3>
             <FaUserCircle className="user-icon" />
           </div>
           <div className="db-bottom">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Login.css";
 import TextBox from "../../components/TextField/TextField";
 import Button from "../../components/Button/Button";
@@ -7,8 +7,10 @@ import axios from "axios";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import google from "../../assets/google.png";
+import { UserContext } from "../../Context/UserProvider";
 
 export default function Login() {
+  const {updateUser} = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -20,6 +22,10 @@ export default function Login() {
         email,
         password,
       });
+      console.log(response.data.name);
+      if(response.data.name) { 
+        updateUser(response.data.name);
+      }
       // Assuming your server sends back a token upon successful login
       if (response.data.token) {
         // Store the token in localStorage or a global state management system
