@@ -255,7 +255,7 @@ export default function Home() {
               <div className="section-3">
                 <div className="headline">
                   <h4>Recent Jobs</h4>
-                  <a href="/joblist"><h4>View All</h4></a>
+                  <a href="/joblist"><h4>View all</h4></a>
                 </div>
                 <div className="table-container">
                   <table className="table">
