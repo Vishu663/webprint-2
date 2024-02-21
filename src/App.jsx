@@ -1,5 +1,5 @@
 import Routing from "./Routing/Routing";
-import { UserProvider } from "./Context/UserProvider";
+import { UserProvider } from "./context/UserProvider";
 
 export default function App() {
   return <>

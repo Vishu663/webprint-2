@@ -7,7 +7,7 @@ import axios from "axios";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import google from "../../assets/google.png";
-import { UserContext } from "../../Context/UserProvider";
+import { UserContext } from "../../context/UserProvider";
 
 export default function Login() {
   const {updateUser} = useContext(UserContext);

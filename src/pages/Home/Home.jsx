@@ -13,7 +13,7 @@ import { VscTriangleRight } from "react-icons/vsc";
 import moment from "moment";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../Context/UserProvider";
+import { UserContext } from "../../context/UserProvider";
 
 export default function Home() {
   const {user} = useContext(UserContext);
@@ -242,7 +242,7 @@ export default function Home() {
               <div className="section-3">
                 <div className="headline">
                   <h4>Recent Jobs</h4>
-                  <a href="/joblist"><h4>View all</h4></a>
+                  <h4 onClick={handleJob}>View all</h4>
                 </div>
                 <div className="table-container">
                   <table className="table">
