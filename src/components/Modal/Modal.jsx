@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import "./Modal.css"; // Import a separate CSS file for styling
 import TextBox from "../TextField/TextField";
-import { MdEmail } from "react-icons/md";
+import { useState } from "react";
 
 const Modal = ({
   onClose,
   title,
-  content,
-  image,
-  modalPlaceholder,
   label1,
   label2,
   pholder1,
@@ -70,8 +67,8 @@ const Modal = ({
           </div>
           {!isAutomatic && <TextBox type={"text"} placeholder={pholder3} />}
           <div className="modal-buttons">
-          <button>Create</button>
-          <button onClick={onClose}>Close</button>
+            <button>Create</button>
+            <button onClick={onClose}>Close</button>
           </div>
         </div>
       </div>
@@ -80,3 +77,19 @@ const Modal = ({
 };
 
 export default Modal;
+
+// Define PropTypes validation
+Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.node,
+  image: PropTypes.node,
+  modalPlaceholder: PropTypes.string,
+  label1: PropTypes.string,
+  label2: PropTypes.string,
+  pholder1: PropTypes.string,
+  pholder2: PropTypes.string,
+  pholder3: PropTypes.string,
+  icon1: PropTypes.node,
+  icon2: PropTypes.node,
+};

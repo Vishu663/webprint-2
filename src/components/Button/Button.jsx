@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import "./Button.css";
 
 export default function Buttons(props) {
@@ -40,3 +40,15 @@ export default function Buttons(props) {
     </div>
   );
 }
+
+// Define PropTypes validation
+Buttons.propTypes = {
+  type: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  handleClick: PropTypes.func,
+  bTitle: PropTypes.node.isRequired,
+  btype: PropTypes.oneOf(["primary", "secondary"]),
+  btnImg: PropTypes.string,
+  btnImgSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};

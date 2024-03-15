@@ -1,4 +1,3 @@
-import React from "react";
 import "./ResetPsw.css";
 import TextBox from "../../components/TextField/TextField";
 import Button from "../../components/Button/Button";

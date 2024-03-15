@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import "./Login.css";
 import TextBox from "../../components/TextField/TextField";
 import Button from "../../components/Button/Button";
@@ -62,7 +62,7 @@ export default function Login() {
               handleChange={(value) => setEmail(value)}
             />
             <Link to={"/signup"}>
-              <p className="bottom-label">Don't have account register now?</p>
+              <p className="bottom-label">Dont have account register now?</p>
             </Link>
           </div>
           <div>
@@ -103,7 +103,7 @@ export default function Login() {
             <div>
               <p>
                 By clicking “Login with Google/Email/SAML” above you acknowledge
-                that you have read and understood and agree to WebPrint's Terms
+                that you have read and understood and agree to WebPrints Terms
                 & Conditions & Privacy Policy
               </p>
             </div>

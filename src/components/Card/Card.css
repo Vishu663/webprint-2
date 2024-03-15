@@ -19,8 +19,8 @@
 }
 
 .card-third {
-  height: 116px;
-  width: 116px;
+  height: 100%;
+  width: 16%;
   flex: 0 0 auto;
   background-color: white;
   border-radius: 10px;

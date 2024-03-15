@@ -109,22 +109,30 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 900px;
+    width: 80%;
     gap: 10px;
+}
+
+.section-cards {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .section-1 {
     display: flex;
-    height: 106px;
+    height: 50%;
     width: 100%;
+    gap: 15px;
     /* background-color: #36179a; */
     align-items: center;
     justify-content: space-between;
 }
 
 .section-box {
-    height: 100px;
-    width: 260px;
+    height: 100%;
+    width: 100%;
     background-color: #f0ebff;
     border-radius: 12px;
 }
@@ -132,7 +140,7 @@
 .section-2 {
     display: flex;
     flex-direction: column;
-    height: 170px;
+    height: 50%;
     width: 100%;
     background-color: #f0ebff;
     justify-content: space-between;
@@ -148,9 +156,10 @@
 
 .date-boxes {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     overflow: hidden;
     overflow-x: hidden;
+    height: 100%;
 }
 
 .inside-box {
@@ -177,7 +186,7 @@
 .section-3 {
     display: flex;
     flex-direction: column;
-    height: 288px;
+    height: calc(100% - 35%);
     width: 100%;
     background-color: #f0ebff;
     border-radius: 12px;
@@ -228,7 +237,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 289px;
+    width: 20%;
     gap: 8px;
 }
 
@@ -238,4 +247,16 @@
     background-color: #f0ebff;
     border-radius: 12px;
     padding: 8px;
+}
+
+@media (width<=2000px) {
+    .section-cards{
+        height: 50%;
+    }
+    .section-1{
+        height: 40%;
+    }
+    .section-2{
+        height: 60%;
+    }
 }

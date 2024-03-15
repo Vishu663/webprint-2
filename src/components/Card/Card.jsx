@@ -1,5 +1,5 @@
-import React from 'react'
-import './Card.css'
+import PropTypes from 'prop-types'; // Import PropTypes
+import './Card.css';
 
 export default function Card(props) {
     const { ctype, children } = props;
@@ -11,3 +11,8 @@ export default function Card(props) {
     );
 }
 
+// Define PropTypes validation
+Card.propTypes = {
+    ctype: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
+};

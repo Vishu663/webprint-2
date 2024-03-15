@@ -1,4 +1,3 @@
-import React from "react";
 import "./ForgetPsw.css";
 import TextBox from "../../components/TextField/TextField";
 import Button from "../../components/Button/Button";
@@ -23,7 +22,7 @@ export default function ForgetPsw() {
         <div className="forgetpsw-head">
           <h1>Forgot your password?</h1>
           <h4>
-            Don't worry, we'll send you a message to help you reset your
+            Dont worry, we ll send you a message to help you reset your
             passsword.
           </h4>
         </div>

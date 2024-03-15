@@ -6,17 +6,16 @@ import { IoIosSettings } from "react-icons/io";
 import { IoLogOut } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { BsBriefcaseFill } from "react-icons/bs";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import Card from "../../components/Card/Card";
 import { VscTriangleLeft } from "react-icons/vsc";
 import { VscTriangleRight } from "react-icons/vsc";
 import moment from "moment";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserProvider";
 
 export default function Home() {
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
   const [iconStates, setIconStates] = useState({
     dashboard: true,
@@ -135,108 +134,115 @@ export default function Home() {
           </div>
           <div className="db-bottom">
             <div className="db-bottom-left">
-              <div className="section-1">
-                <div className="section-box"></div>
-                <div className="section-box"></div>
-                <div className="section-box"></div>
-              </div>
-              <div className="section-2">
-                <div className="date">
-                  <h3>{moment().format("MMMM, YYYY")}</h3>
-                  <div class="button-container">
-                    <button
-                      onClick={() => {
-                        handleHorizantalScroll(
-                          elementRef.current,
-                          25,
-                          100,
-                          -31
-                        );
-                      }}
-                      disabled={arrowDisable}
-                    >
-                      <VscTriangleLeft className="arrow-icon" />
-                    </button>
-                    <button
-                      onClick={() => {
-                        handleHorizantalScroll(elementRef.current, 25, 100, 31);
-                      }}
-                    >
-                      <VscTriangleRight className="arrow-icon" />
-                    </button>
-                  </div>
+              <div className="section-cards">
+                <div className="section-1">
+                  <div className="section-box"></div>
+                  <div className="section-box"></div>
+                  <div className="section-box"></div>
                 </div>
-                <div className="date-boxes" ref={elementRef}>
-                  <Card ctype="card-third">
-                    <div className="inside-box">{moment().format("ddd")}</div>
-                    {moment().format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(1, "days").format("ddd")}
+                <div className="section-2">
+                  <div className="date">
+                    <h3>{moment().format("MMMM, YYYY")}</h3>
+                    <div className="button-container">
+                      <button
+                        onClick={() => {
+                          handleHorizantalScroll(
+                            elementRef.current,
+                            25,
+                            100,
+                            -31
+                          );
+                        }}
+                        disabled={arrowDisable}
+                      >
+                        <VscTriangleLeft className="arrow-icon" />
+                      </button>
+                      <button
+                        onClick={() => {
+                          handleHorizantalScroll(
+                            elementRef.current,
+                            25,
+                            100,
+                            31
+                          );
+                        }}
+                      >
+                        <VscTriangleRight className="arrow-icon" />
+                      </button>
                     </div>
-                    {moment().add(1, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(2, "days").format("ddd")}
-                    </div>
-                    {moment().add(2, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(3, "days").format("ddd")}
-                    </div>
-                    {moment().add(3, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(4, "days").format("ddd")}
-                    </div>
-                    {moment().add(4, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(5, "days").format("ddd")}
-                    </div>
-                    {moment().add(5, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(6, "days").format("ddd")}
-                    </div>
-                    {moment().add(6, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(7, "days").format("ddd")}
-                    </div>
-                    {moment().add(7, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(8, "days").format("ddd")}
-                    </div>
-                    {moment().add(8, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(9, "days").format("ddd")}
-                    </div>
-                    {moment().add(9, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(10, "days").format("ddd")}
-                    </div>
-                    {moment().add(10, "days").format("D")}
-                  </Card>
-                  <Card ctype="card-third">
-                    <div className="inside-box">
-                      {moment().add(11, "days").format("ddd")}
-                    </div>
-                    {moment().add(11, "days").format("D")}
-                  </Card>
+                  </div>
+                  <div className="date-boxes" ref={elementRef}>
+                    <Card ctype="card-third">
+                      <div className="inside-box">{moment().format("ddd")}</div>
+                      {moment().format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(1, "days").format("ddd")}
+                      </div>
+                      {moment().add(1, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(2, "days").format("ddd")}
+                      </div>
+                      {moment().add(2, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(3, "days").format("ddd")}
+                      </div>
+                      {moment().add(3, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(4, "days").format("ddd")}
+                      </div>
+                      {moment().add(4, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(5, "days").format("ddd")}
+                      </div>
+                      {moment().add(5, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(6, "days").format("ddd")}
+                      </div>
+                      {moment().add(6, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(7, "days").format("ddd")}
+                      </div>
+                      {moment().add(7, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(8, "days").format("ddd")}
+                      </div>
+                      {moment().add(8, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(9, "days").format("ddd")}
+                      </div>
+                      {moment().add(9, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(10, "days").format("ddd")}
+                      </div>
+                      {moment().add(10, "days").format("D")}
+                    </Card>
+                    <Card ctype="card-third">
+                      <div className="inside-box">
+                        {moment().add(11, "days").format("ddd")}
+                      </div>
+                      {moment().add(11, "days").format("D")}
+                    </Card>
+                  </div>
                 </div>
               </div>
               <div className="section-3">

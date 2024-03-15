@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./SignUp.css";
 import TextBox from "../../components/TextField/TextField";
 import Button from "../../components/Button/Button";
@@ -114,7 +114,7 @@ export default function SignUp() {
               <p>
                 By clicking “signup with Google/Email/SAML” above you
                 acknowledge that you have read and understood and agree to
-                WebPrint's Terms & Conditions & Privacy Policy
+                WebPrints Terms & Conditions & Privacy Policy
               </p>
             </div>
           </div>
