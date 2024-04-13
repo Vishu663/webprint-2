@@ -6,13 +6,14 @@ import { IoIosSettings } from "react-icons/io";
 import { IoLogOut } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { BsBriefcaseFill } from "react-icons/bs";
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
 import Card from "../../components/Card/Card";
 import { VscTriangleLeft } from "react-icons/vsc";
 import { VscTriangleRight } from "react-icons/vsc";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserProvider";
+import { getCurrentJobDetails } from "../../api/api";
 
 export default function Home() {
   const { user } = useContext(UserContext);
@@ -59,6 +60,19 @@ export default function Home() {
         setArrowDisable(false);
       }
     }, speed);
+  };
+
+  const [jobDetails, setJobDetails] = useState([]);
+
+  useEffect(() => {
+    fetchJobDetails();
+  }, []);
+
+  const fetchJobDetails = async () => {
+    const details = await getCurrentJobDetails();
+    if (details) {
+      setJobDetails(details);
+    }
   };
 
   const handleJob = () => {
@@ -262,62 +276,15 @@ export default function Home() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Job</td>
-                        <td>Filename</td>
-                        <td>ID</td>
-                        <td>10gm</td>
-                        <td>2hrs</td>
-                      </tr>
-                      <tr>
-                        <td>Job</td>
-                        <td>Filename</td>
-                        <td>ID</td>
-                        <td>10gm</td>
-                        <td>2hrs</td>
-                      </tr>
-                      <tr>
-                        <td>Job</td>
-                        <td>Filename</td>
-                        <td>ID</td>
-                        <td>10gm</td>
-                        <td>2hrs</td>
-                      </tr>
-                      <tr>
-                        <td>Job</td>
-                        <td>Filename</td>
-                        <td>ID</td>
-                        <td>10gm</td>
-                        <td>2hrs</td>
-                      </tr>
-                      <tr>
-                        <td>Job</td>
-                        <td>Filename</td>
-                        <td>ID</td>
-                        <td>10gm</td>
-                        <td>2hrs</td>
-                      </tr>
-                      <tr>
-                        <td>Job</td>
-                        <td>Filename</td>
-                        <td>ID</td>
-                        <td>10gm</td>
-                        <td>2hrs</td>
-                      </tr>
-                      <tr>
-                        <td>Job</td>
-                        <td>Filename</td>
-                        <td>ID</td>
-                        <td>10gm</td>
-                        <td>2hrs</td>
-                      </tr>
-                      <tr>
-                        <td>Job</td>
-                        <td>Filename</td>
-                        <td>ID</td>
-                        <td>10gm</td>
-                        <td>2hrs</td>
-                      </tr>
+                      {jobDetails.map((job) => (
+                        <tr key={job.jobId}>
+                          <td>{job.jobName}</td>
+                          <td>{job.jobId}</td>
+                          <td>{job.fileName}</td>
+                          <td>{job.filamentUsed}</td>
+                          <td>{job.timeRequired}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
