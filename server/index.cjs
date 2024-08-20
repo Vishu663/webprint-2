@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "webprint-2-site.vercel.app",
+    origin: "http://localhost:5173",
   })
 );
 
