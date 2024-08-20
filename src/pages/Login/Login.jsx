@@ -18,7 +18,7 @@ export default function Login() {
   async function loginUser(ev) {
     ev.preventDefault();
     try {
-      const response = await axios.post("webprint-2-api.vercel.app/login", {
+      const response = await axios.post("http://localhost:3000/login", {
         email,
         password,
       });
