@@ -97,6 +97,10 @@ app.post("/logout", (req, res) => {
   res.clearCookie("token").json({ success: true });
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
